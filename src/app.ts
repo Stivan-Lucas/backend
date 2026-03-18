@@ -4,9 +4,11 @@ import {
   validatorCompiler,
   type ZodTypeProvider,
 } from 'fastify-type-provider-zod'
+import { getLoggerOptions } from './utils/logger'
 
 export const app = Fastify({
-  logger: true,
+  logger: getLoggerOptions(),
+  genReqId: () => crypto.randomUUID(),
 }).withTypeProvider<ZodTypeProvider>()
 
 app.setValidatorCompiler(validatorCompiler)
