@@ -1,12 +1,46 @@
 {
-  "name": "backend",
-  "module": "index.ts",
+  "name": "omninexus-backend",
+  "description": "Backend gerenciado do RMM da OmniNexus",
+  "module": "src/server.ts",
+  "version": "0.0.0",
   "type": "module",
   "private": true,
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stivan-Lucas/backend.git"
+  },
+  "keywords": [
+    "Bun",
+    "Kafka",
+    "Fastify",
+    "OmniNexus",
+    "REST"
+  ],
+  "author": {
+    "email": "suporte@omninexus.com.br",
+    "name": "Lucas Camargo Stivan",
+    "url": "https://www.omninexus.com.br/"
+  },
+  "scripts": {
+    "dev": "bun --watch src/server.ts",
+    "start": "bun src/server.ts",
+    "format": "biome format --write .",
+    "lint": "biome lint --write .",
+    "check": "biome check --write .",
+    "check:unsafe": "biome check --write --unsafe .",
+    "ci": "biome check ."
+  },
   "devDependencies": {
+    "@biomejs/biome": "2.4.7",
     "@types/bun": "latest"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "fastify": "^5.8.2",
+    "fastify-type-provider-zod": "^6.1.0",
+    "zod": "^4.3.6"
   }
 }
