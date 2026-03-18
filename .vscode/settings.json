@@ -4,5 +4,5 @@
     "source.organizeImports.biome": "explicit",
     "source.fixAll.biome": "explicit"
   },
-  "cSpell.words": ["omninexus", "Stivan"]
+  "cSpell.words": ["omninexus", "Stivan", "treeify"]
 }
