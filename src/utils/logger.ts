@@ -6,12 +6,21 @@ import { env } from '../env/env'
 const isDev = env.NODE_ENV !== 'production'
 const logsDir = path.resolve(process.cwd(), 'logs')
 
+/**
+ * Garante a existência do diretório de logs de forma síncrona.
+ * Utilizado apenas em ambiente de produção antes da inicialização do logger.
+ */
 const ensureLogsDirectory = () => {
   if (!fs.existsSync(logsDir)) {
     fs.mkdirSync(logsDir, { recursive: true })
   }
 }
 
+/**
+ * Retorna as configurações do Pino Logger baseadas no ambiente.
+ * - Dev: Focado em legibilidade (pino-pretty).
+ * - Prod: Focado em persistência (file) e rotação automática de logs (pino-roll).
+ */
 export const getLoggerOptions = (): LoggerOptions => {
   if (isDev) {
     return {
