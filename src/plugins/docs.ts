@@ -16,7 +16,13 @@ export const docsPlugin = fp(async (app) => {
           identifier: packageJson.licenses[0]?.type,
           url: packageJson.licenses[0]?.url,
         },
+        contact: {
+          email: packageJson.author.email,
+          name: packageJson.author.name,
+          url: packageJson.author.url,
+        },
       },
+      tags: [{ name: 'Admin', description: 'Acesso restrito' }],
     },
   })
 
@@ -25,6 +31,7 @@ export const docsPlugin = fp(async (app) => {
     routePrefix: '/docs',
     logLevel: 'silent',
     configuration: {
+      showDeveloperTools: 'never',
       theme: 'purple',
     },
   })
