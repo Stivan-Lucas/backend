@@ -2,7 +2,7 @@
   "name": "omninexus-backend",
   "description": "Backend gerenciado do RMM da OmniNexus",
   "module": "src/server.ts",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "private": true,
   "license": "Apache-2.0",
